@@ -8,6 +8,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Menu {
 
@@ -41,27 +43,40 @@ public class Menu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBackground(Color.WHITE);
+		frame.getContentPane().setBackground(Color.WHITE);
+		frame.setBounds(100, 100, 340, 320);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblMenu = new JLabel("Menu");
-		lblMenu.setFont(new Font("Garamond", Font.PLAIN, 18));
-		lblMenu.setBounds(191, 38, 46, 14);
-		frame.getContentPane().add(lblMenu);
+		JLabel Title = new JLabel("Menu");
+		Title.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		Title.setBounds(140, 43, 56, 23);
+		frame.getContentPane().add(Title);
 		
-		JButton btnCadastreUmLivro = new JButton("Cadastre um livro");
-		btnCadastreUmLivro.setBackground(Color.LIGHT_GRAY);
-		btnCadastreUmLivro.setBounds(145, 93, 130, 23);
-		frame.getContentPane().add(btnCadastreUmLivro);
+		JButton btnCadastro = new JButton("Cadastre um livro");
+		btnCadastro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+				CadastroLivro cadastro = new CadastroLivro();
+			
+			}
+		});
+		btnCadastro.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnCadastro.setBackground(Color.WHITE);
+		btnCadastro.setBounds(91, 99, 145, 23);
+		frame.getContentPane().add(btnCadastro);
 		
-		JButton btnPesquise = new JButton("Pesquise");
-		btnPesquise.setBackground(Color.LIGHT_GRAY);
-		btnPesquise.setBounds(145, 143, 130, 23);
-		frame.getContentPane().add(btnPesquise);
+		JButton btnPesquisa = new JButton("Pesquise");
+		btnPesquisa.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnPesquisa.setBackground(Color.WHITE);
+		btnPesquisa.setBounds(101, 143, 124, 23);
+		frame.getContentPane().add(btnPesquisa);
 		
 		JButton btnLogout = new JButton("Logout");
-		btnLogout.setBounds(168, 227, 89, 23);
+		btnLogout.setBackground(Color.WHITE);
+		btnLogout.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnLogout.setBounds(122, 208, 89, 23);
 		frame.getContentPane().add(btnLogout);
 	}
 }
